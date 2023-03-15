@@ -1,10 +1,8 @@
-let speech = new SpeechSynthesisUtterance();
-speech.lang = "it";
 
 let voices = [];
 window.speechSynthesis.onvoiceschanged = () => {
   voices = window.speechSynthesis.getVoices();
-  speech.voice = voices[160];
+  
   let voiceSelect = document.querySelector("#voices");
   let i = 0,k=0;
   for(let voice in voices){
@@ -68,4 +66,41 @@ document.querySelector("#resume").addEventListener("click", () => {
 
 document.querySelector("#cancel").addEventListener("click", () => {
   window.speechSynthesis.cancel();
+});
+let listLines = [];
+let listSpeech = []; 
+let file = document.getElementById("readfile");
+file.addEventListener("change", function () {
+var reader = new FileReader();
+  reader.onload = function (progressEvent) {
+    listLines = this.result.split("\n");
+    document.querySelector("#dataset-length").innerHTML = listLines.length;
+    for(let i = 0; i < listLines.length; i++){
+      let speech = new SpeechSynthesisUtterance();
+      speech.lang = "it";
+      speech.voice = voices[160];
+      speech.text = listLines[i];
+      
+      speech.addEventListener("start", (event) => {
+        console.log(event.elapsedTime);
+      });
+
+      speech.addEventListener("end", (event) => {
+        console.log(event.elapsedTime);
+      });
+      speech.addEventListener("boundary", (event) => {
+        console.log(
+          `Parola: ${speech.text.substring(event.charIndex,event.charIndex+event.charLength)} indice array: ${i}`
+        );
+      });
+      
+      listSpeech.push(speech);
+      console.log(listSpeech.length);
+    }
+    window.speechSynthesis.speak(listSpeech[10]);
+
+    
+  };
+  reader.readAsText(this.files[0]);
+
 });
