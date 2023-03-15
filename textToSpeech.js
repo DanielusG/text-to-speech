@@ -37,21 +37,24 @@ document.querySelector("#voices").addEventListener("change", () => {
 });
 
 document.querySelector("#start").addEventListener("click", () => {
-  speech.text = document.querySelector("textarea").value;
-  speech.addEventListener("start", (event) => {
-    console.log(event.elapsedTime);
-  });
+  let speech = new SpeechSynthesisUtterance();
+      speech.lang = "it";
+      speech.voice = voices[160];
+      speech.text = document.querySelector("textarea").value;
+      
+      speech.addEventListener("start", (event) => {
+        console.log(event.elapsedTime);
+      });
 
-  speech.addEventListener("end", (event) => {
-    console.log(event.elapsedTime);
-  });
-  speech.addEventListener("boundary", (event) => {
-    console.log(
-      `Parola: ${speech.text.substring(event.charIndex,event.charIndex+event.charLength)}`
-    );
-  });
-  
-  window.speechSynthesis.speak(speech);
+      speech.addEventListener("end", (event) => {
+        console.log(event.elapsedTime);
+        document.querySelector("textarea").value += `${listLines[i]}|${event.elapsedTime}\n`;
+        document.querySelector("#Progress").innerHTML = `${i}/${listLines.length}`;
+        speak();
+      });
+      
+      window.speechSynthesis.speak(speech);
+      console.log(listSpeech.length);
 
 
 });
@@ -87,20 +90,26 @@ var reader = new FileReader();
 
       speech.addEventListener("end", (event) => {
         console.log(event.elapsedTime);
-      });
-      speech.addEventListener("boundary", (event) => {
-        console.log(
-          `Parola: ${speech.text.substring(event.charIndex,event.charIndex+event.charLength)} indice array: ${i}`
-        );
+        document.querySelector("textarea").value += `${listLines[i]}|${event.elapsedTime}\n`;
+        document.querySelector("#Progress").innerHTML = `${i}/${listLines.length}`;
+        speak();
       });
       
       listSpeech.push(speech);
       console.log(listSpeech.length);
     }
-    window.speechSynthesis.speak(listSpeech[10]);
-
+    speak();
+    console.log("aaaa")
     
   };
   reader.readAsText(this.files[0]);
 
 });
+var index = 0;
+function speak() {
+  index++;
+  if(index >= listSpeech.length)
+      return;
+
+  window.speechSynthesis.speak(listSpeech[index]);
+}
