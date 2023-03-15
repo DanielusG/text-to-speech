@@ -1,12 +1,19 @@
 let speech = new SpeechSynthesisUtterance();
-speech.lang = "en";
+speech.lang = "it";
 
 let voices = [];
 window.speechSynthesis.onvoiceschanged = () => {
   voices = window.speechSynthesis.getVoices();
-  speech.voice = voices[0];
+  speech.voice = voices[160];
   let voiceSelect = document.querySelector("#voices");
-  voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.name, i)));
+  let i = 0,k=0;
+  for(let voice in voices){
+    if(voices[voice].lang === "it-IT"){
+      voiceSelect.options[k] = new Option(voices[voice].name, i);
+      k++;
+    }
+    i++;
+  }
 };
 
 document.querySelector("#rate").addEventListener("input", () => {
@@ -33,7 +40,22 @@ document.querySelector("#voices").addEventListener("change", () => {
 
 document.querySelector("#start").addEventListener("click", () => {
   speech.text = document.querySelector("textarea").value;
+  speech.addEventListener("start", (event) => {
+    console.log(event.elapsedTime);
+  });
+
+  speech.addEventListener("end", (event) => {
+    console.log(event.elapsedTime);
+  });
+  speech.addEventListener("boundary", (event) => {
+    console.log(
+      `Parola: ${speech.text.substring(event.charIndex,event.charIndex+event.charLength)}`
+    );
+  });
+  
   window.speechSynthesis.speak(speech);
+
+
 });
 
 document.querySelector("#pause").addEventListener("click", () => {

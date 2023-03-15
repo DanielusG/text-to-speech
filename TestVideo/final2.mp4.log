@@ -1,0 +1,11 @@
+Started render process: /tmp/.mount_kdenlizkg4ke/usr/bin/melt -progress /tmp/kdenlive-bZtKzY.mlt out=2879
+[h264_nvenc @ 0x7f5d50001f80] Using global_quality with nvenc is deprecated. Use qp instead.[mp3float @ 0x7f5d11013bc0] Could not update timestamps for skipped samples.1	29	1
+2	88	3
+3	116	4
+4	144	5
+5	173	6
+6	202	7
+7	260	9
+8	288	10
+9	318	11
+Job aborted by user

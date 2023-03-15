@@ -1,0 +1,152 @@
+WEBVTT
+
+00:00.000 --> 00:03.100
+Donkey Kong! It's a game! Let's do that, I guess. I don't know.
+
+00:03.100 --> 00:08.800
+And because I love you and hate sleep and a social life, I'm gonna be testing not one, not two, but three different AI algorithms.
+
+00:08.800 --> 00:14.000
+I thought it'd be cool to, like, compare all the algorithms I've used on previous projects on a single project and see who wins.
+
+00:14.000 --> 00:18.900
+I'm talking the best of the best. We got genetic algorithm, we got neural evolution of augmented topologies,
+
+00:18.900 --> 00:21.900
+and we got proximal policy optimization going head-to-head.
+
+00:21.900 --> 00:24.400
+But we're getting ahead of ourselves. Game first, AI later.
+
+00:24.400 --> 00:25.800
+Okay, let's make Donkey Kong.
+
+00:25.800 --> 00:30.200
+Okay, player onscreen done. It's a square. Very nice. Creative work. Nice.
+
+00:30.200 --> 00:33.200
+Now, I could move around the player using Unity's built-in physics system,
+
+00:33.200 --> 00:37.200
+but that will animate the player way too smoothly, and in order for it to have that classic arcade feel,
+
+00:37.200 --> 00:39.000
+it's gotta have a bit of jank movement in it.
+
+00:39.000 --> 00:41.500
+So, unfortunately, I'm gonna have to be a big boy and code the physics myself.
+
+00:41.500 --> 00:44.600
+Okay, let's move that player. Can it go right? Yes.
+
+00:44.600 --> 00:47.000
+Can it go left? Close enough.
+
+00:47.000 --> 00:50.000
+Can it jump? Ah, well, yeah. Ah, close.
+
+00:50.000 --> 00:51.500
+Gravity? Yes.
+
+00:51.500 --> 00:53.000
+Less gravity? Yes.
+
+00:53.000 --> 00:55.800
+Fuck yeah, everything is coming together. This must be what God felt like.
+
+00:55.800 --> 00:57.800
+Dude, you're just moving a square around the-
+
+00:57.800 --> 00:59.500
+Sideways jumping? Yes.
+
+00:59.500 --> 01:03.500
+Sideways jumping and gravity at the same time? Yes.
+
+01:03.500 --> 01:06.500
+Woo! Holy shit, he cannot be stopped.
+
+01:06.500 --> 01:08.500
+Ground? No.
+
+01:08.500 --> 01:09.500
+Oof.
+
+01:09.500 --> 01:10.800
+Ground? No.
+
+01:10.800 --> 01:11.500
+Tutorial?
+
+01:11.500 --> 01:16.000
+Turns true or false depending on weather. The move was successfully com-
+
+01:16.000 --> 01:16.900
+Yes.
+
+01:16.900 --> 01:18.400
+Ground? No.
+
+01:18.400 --> 01:19.400
+Fuck.
+
+01:19.400 --> 01:20.600
+Ground? No.
+
+01:20.600 --> 01:22.100
+This is getting annoying.
+
+01:22.100 --> 01:23.200
+Ground? No.
+
+01:23.200 --> 01:26.700
+That's actually pretty aesthetically pleasing, but it's not at all what we're looking for.
+
+01:26.700 --> 01:28.500
+Ground? Oh? No?
+
+01:28.500 --> 01:31.300
+But we're close. We're close and I can feel it.
+
+01:31.300 --> 01:32.500
+Ground? N-
+
+01:32.500 --> 01:34.000
+Yes. Yeah.
+
+01:34.000 --> 01:36.000
+Fucking easy. Bit of a challenge next time.
+
+01:36.000 --> 01:38.000
+Okay, so the ground's done and it's all looking pretty good now.
+
+01:38.000 --> 01:40.800
+I know it's nothing revolutionary, but you know, baby steps.
+
+01:40.800 --> 01:43.200
+So, the problem with Donkey Kong is that we gotta handle these little steps.
+
+01:43.200 --> 01:46.200
+And it's not like a smooth slope either. It's a bunch of individual steps.
+
+01:46.200 --> 01:48.100
+You see, if I try this now, it's just gonna-
+
+01:48.100 --> 01:50.100
+Oh. Oh, what the- What?
+
+01:50.100 --> 01:51.400
+It already works.
+
+01:51.400 --> 01:54.400
+I- I don't understand. It never works first try.
+
+01:54.400 --> 01:56.700
+Fuck. This has never- This has never happened before.
+
+01:56.700 --> 01:58.400
+Oh, I'm- I'm scared.
+
+01:58.400 --> 02:22.400
+Oh, no. It's okay. It's okay.
+

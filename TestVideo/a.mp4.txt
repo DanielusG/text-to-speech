@@ -1,0 +1,50 @@
+Donkey Kong! It's a game! Let's do that, I guess. I don't know.
+And because I love you and hate sleep and a social life, I'm gonna be testing not one, not two, but three different AI algorithms.
+I thought it'd be cool to, like, compare all the algorithms I've used on previous projects on a single project and see who wins.
+I'm talking the best of the best. We got genetic algorithm, we got neural evolution of augmented topologies,
+and we got proximal policy optimization going head-to-head.
+But we're getting ahead of ourselves. Game first, AI later.
+Okay, let's make Donkey Kong.
+Okay, player onscreen done. It's a square. Very nice. Creative work. Nice.
+Now, I could move around the player using Unity's built-in physics system,
+but that will animate the player way too smoothly, and in order for it to have that classic arcade feel,
+it's gotta have a bit of jank movement in it.
+So, unfortunately, I'm gonna have to be a big boy and code the physics myself.
+Okay, let's move that player. Can it go right? Yes.
+Can it go left? Close enough.
+Can it jump? Ah, well, yeah. Ah, close.
+Gravity? Yes.
+Less gravity? Yes.
+Fuck yeah, everything is coming together. This must be what God felt like.
+Dude, you're just moving a square around the-
+Sideways jumping? Yes.
+Sideways jumping and gravity at the same time? Yes.
+Woo! Holy shit, he cannot be stopped.
+Ground? No.
+Oof.
+Ground? No.
+Tutorial?
+Turns true or false depending on weather. The move was successfully com-
+Yes.
+Ground? No.
+Fuck.
+Ground? No.
+This is getting annoying.
+Ground? No.
+That's actually pretty aesthetically pleasing, but it's not at all what we're looking for.
+Ground? Oh? No?
+But we're close. We're close and I can feel it.
+Ground? N-
+Yes. Yeah.
+Fucking easy. Bit of a challenge next time.
+Okay, so the ground's done and it's all looking pretty good now.
+I know it's nothing revolutionary, but you know, baby steps.
+So, the problem with Donkey Kong is that we gotta handle these little steps.
+And it's not like a smooth slope either. It's a bunch of individual steps.
+You see, if I try this now, it's just gonna-
+Oh. Oh, what the- What?
+It already works.
+I- I don't understand. It never works first try.
+Fuck. This has never- This has never happened before.
+Oh, I'm- I'm scared.
+Oh, no. It's okay. It's okay.

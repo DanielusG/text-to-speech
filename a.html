@@ -1,0 +1,89 @@
+<script>
+    // Questa funzione crea una richiesta di sintesi vocale e registra l'audio del sistema
+    (async () => {
+      // Il testo da pronunciare
+      const TEXT = "The revolution will not be televised";
+    
+      // Il bit rate della registrazione
+      const BIT_RATE = 128000;
+    
+      // Il tipo di blob da creare
+      const BLOB_TYPE = "audio/webm";
+    
+      // Il selettore del media stream
+      const MEDIA_STREAM_SELECTOR = { video: true, audio: true };
+    
+      // Questa funzione crea un media recorder a partire da un media stream
+      function createMediaRecorder(mediaStream) {
+        // Creo un array vuoto per memorizzare i chunk di dati
+        const chunks = [];
+    
+        // Creo un media recorder con il bit rate specificato
+        const mediaRecorder = new MediaRecorder(mediaStream, {
+          bitsPerSecond: BIT_RATE,
+        });
+    
+        // Aggiungo un evento che salva i chunk di dati quando sono disponibili
+        mediaRecorder.ondataavailable = (event) => {
+          if (event.data.size > 0) chunks.push(event.data);
+        };
+    
+        // Aggiungo un evento che risolve la promessa con il blob creato dai chunk di dati quando la registrazione si ferma
+        mediaRecorder.onstop = () => {
+          resolve(new Blob(chunks, { type: BLOB_TYPE }));
+        };
+    
+        // Restituisco il media recorder creato
+        return mediaRecorder;
+      }
+    
+      // Questa funzione riproduce un blob come audio
+      function playBlob(blob) {
+        // Creo un player audio
+        const player = new Audio();
+    
+        // Imposto la sorgente del player con l'URL creato dal blob
+        player.src = URL.createObjectURL(blob);
+    
+        // Imposto il player per riprodurre automaticamente e mostrare i controlli
+        player.autoplay = true;
+        player.controls = true;
+        
+         document.body.appendChild(player);
+        
+         console.log("playing...");
+        
+         return player;
+        
+       }
+    
+       console.log("picking system audio");
+    
+       try {
+         // Ottengo lo stream audio e video dal sistema 
+         const stream = await navigator.mediaDevices.getDisplayMedia(
+           MEDIA_STREAM_SELECTOR 
+         );
+    
+         console.log("stream available", stream);
+    
+         // Ottengo la traccia audio dallo stream 
+         const track = stream.getAudioTracks()[0];
+    
+         if (!track) throw "System audio not available";
+    
+         console.log("track available", track);
+    
+         // Fermo le tracce video dello stream 
+         stream.getVideoTracks().forEach((track) => track.stop());
+    
+         console.log("video tracks stopped");
+    
+         // Creo uno stream vuoto 
+         const mediaStream = new MediaStream();
+    
+         console.log("media stream created", mediaStream);
+    
+         // Aggiungo la traccia audio allo stream vuoto 
+         mediaStream.addTrack(track);
+       }

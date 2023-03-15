@@ -1,0 +1,51 @@
+start	end	text
+0	3100	Donkey Kong! It's a game! Let's do that, I guess. I don't know.
+3100	8800	And because I love you and hate sleep and a social life, I'm gonna be testing not one, not two, but three different AI algorithms.
+8800	14000	I thought it'd be cool to, like, compare all the algorithms I've used on previous projects on a single project and see who wins.
+14000	18900	I'm talking the best of the best. We got genetic algorithm, we got neural evolution of augmented topologies,
+18900	21900	and we got proximal policy optimization going head-to-head.
+21900	24400	But we're getting ahead of ourselves. Game first, AI later.
+24400	25800	Okay, let's make Donkey Kong.
+25800	30200	Okay, player onscreen done. It's a square. Very nice. Creative work. Nice.
+30200	33200	Now, I could move around the player using Unity's built-in physics system,
+33200	37200	but that will animate the player way too smoothly, and in order for it to have that classic arcade feel,
+37200	39000	it's gotta have a bit of jank movement in it.
+39000	41500	So, unfortunately, I'm gonna have to be a big boy and code the physics myself.
+41500	44600	Okay, let's move that player. Can it go right? Yes.
+44600	47000	Can it go left? Close enough.
+47000	50000	Can it jump? Ah, well, yeah. Ah, close.
+50000	51500	Gravity? Yes.
+51500	53000	Less gravity? Yes.
+53000	55800	Fuck yeah, everything is coming together. This must be what God felt like.
+55800	57800	Dude, you're just moving a square around the-
+57800	59500	Sideways jumping? Yes.
+59500	63500	Sideways jumping and gravity at the same time? Yes.
+63500	66500	Woo! Holy shit, he cannot be stopped.
+66500	68500	Ground? No.
+68500	69500	Oof.
+69500	70800	Ground? No.
+70800	71500	Tutorial?
+71500	76000	Turns true or false depending on weather. The move was successfully com-
+76000	76900	Yes.
+76900	78400	Ground? No.
+78400	79400	Fuck.
+79400	80600	Ground? No.
+80600	82100	This is getting annoying.
+82100	83200	Ground? No.
+83200	86700	That's actually pretty aesthetically pleasing, but it's not at all what we're looking for.
+86700	88500	Ground? Oh? No?
+88500	91300	But we're close. We're close and I can feel it.
+91300	92500	Ground? N-
+92500	94000	Yes. Yeah.
+94000	96000	Fucking easy. Bit of a challenge next time.
+96000	98000	Okay, so the ground's done and it's all looking pretty good now.
+98000	100800	I know it's nothing revolutionary, but you know, baby steps.
+100800	103200	So, the problem with Donkey Kong is that we gotta handle these little steps.
+103200	106200	And it's not like a smooth slope either. It's a bunch of individual steps.
+106200	108100	You see, if I try this now, it's just gonna-
+108100	110100	Oh. Oh, what the- What?
+110100	111400	It already works.
+111400	114400	I- I don't understand. It never works first try.
+114400	116700	Fuck. This has never- This has never happened before.
+116700	118400	Oh, I'm- I'm scared.
+118400	142400	Oh, no. It's okay. It's okay.
