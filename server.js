@@ -1,15 +1,19 @@
-var http = require('http');
-var fs = require('fs');
+var express = require('express');
+var path = require('path');
+var app = express();
+const torch = require("torch-js");
+app.use(express.static(__dirname + 'client'));
+app.get('/textToSpeech.js', function(req, res) {
+    res.sendFile(path.join(__dirname + '/textToSpeech.js'));
+});
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
 
-const PORT=8080; 
-
-fs.readFile('./index.html', function (err, html) {
-
-    if (err) throw err;    
-
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": "text/html"});  
-        response.write(html);  
-        response.end();  
-    }).listen(PORT);
+app.listen(3000, function() {
+    console.log('Listening on port 3000!');
+}
+);
+app.querySelector("#pause").addEventListener("click", () => {
+    console.log("pause");
 });

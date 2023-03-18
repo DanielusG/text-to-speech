@@ -1,5 +1,9 @@
 
 let voices = [];
+let rate = 1;
+let volume = 1;
+let pitch = 1;
+let voice = 0;
 window.speechSynthesis.onvoiceschanged = () => {
   voices = window.speechSynthesis.getVoices();
   
@@ -15,25 +19,25 @@ window.speechSynthesis.onvoiceschanged = () => {
 };
 
 document.querySelector("#rate").addEventListener("input", () => {
-  const rate = document.querySelector("#rate").value;
-  speech.rate = rate;
+  const rateL = document.querySelector("#rate").value;
+  rate = rateL;
   document.querySelector("#rate-label").innerHTML = rate;
 });
 
 document.querySelector("#volume").addEventListener("input", () => {
-  const volume = document.querySelector("#volume").value;
-  speech.volume = volume;
+  const volumeL = document.querySelector("#volume").value;
+  volume = volumeL;
   document.querySelector("#volume-label").innerHTML = volume;
 });
 
 document.querySelector("#pitch").addEventListener("input", () => {
-  const pitch = document.querySelector("#pitch").value;
-  speech.pitch = pitch;
+  const pitchL = document.querySelector("#pitch").value;
+  pitch = pitchL;
   document.querySelector("#pitch-label").innerHTML = pitch;
 });
 
 document.querySelector("#voices").addEventListener("change", () => {
-  speech.voice = voices[document.querySelector("#voices").value];
+  voice = voices[document.querySelector("#voices").value];
 });
 
 document.querySelector("#start").addEventListener("click", () => {
@@ -48,9 +52,7 @@ document.querySelector("#start").addEventListener("click", () => {
 
       speech.addEventListener("end", (event) => {
         console.log(event.elapsedTime);
-        document.querySelector("textarea").value += `${listLines[i]}|${event.elapsedTime}\n`;
-        document.querySelector("#Progress").innerHTML = `${i}/${listLines.length}`;
-        speak();
+        document.querySelector("#durata").innerHTML = event.elapsedTime/1000 + "s";
       });
       
       window.speechSynthesis.speak(speech);
@@ -59,9 +61,7 @@ document.querySelector("#start").addEventListener("click", () => {
 
 });
 
-document.querySelector("#pause").addEventListener("click", () => {
-  window.speechSynthesis.pause();
-});
+
 
 document.querySelector("#resume").addEventListener("click", () => {
   window.speechSynthesis.resume();
